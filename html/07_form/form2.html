@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        border: 1px black solid;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/signup">
+      <table>
+        <tr>
+          <td><label for="name">이름</label></td>
+          <td>
+            <!-- required : required 속성이 입력된 input태그를 작성하지 않으면 전송이 되지 않는다.
+            autofocus: 페이지 접속 시 자동으로 focus가 지정된다. =>문서 내에 하나만 지정해야 함.-->
+            <!-- boolean => true/ false 값을 생략하면 true -->
+            <input
+              type="text"
+              name="name"
+              placeholder="이름을 입력해주세요"
+              id="name"
+              required
+              autofocus
+              value="황보석"
+              readonly
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>이메일</td>
+          <td>
+            <input
+              type="email"
+              name="email"
+              placeholder="이메일을 입력해주세요"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>연령대</td>
+          <td>
+            <label><input type="radio" name="age" /> 10대</label>
+            <input type="radio" name="age" /> 20대
+            <input type="radio" name="age" /> 30대
+          </td>
+        </tr>
+        <tr>
+          <td>관심분야</td>
+          <td>
+            <input type="checkbox" name="interests" value="science" checked />
+            과학 <input type="checkbox" name="interests" value="math" /> 수학
+            <input type="checkbox" name="interests" value="english" /> 영어
+            <input type="checkbox" name="interests" value="computer" /> 컴퓨터
+          </td>
+        </tr>
+        <tr>
+          <td>구매수량</td>
+          <td>
+            <input type="number" />
+          </td>
+        </tr>
+        <tr>
+          <td>프로필</td>
+          <td><input type="file" /></td>
+        </tr>
+      </table>
+    </form>
+    <button type="reset" form="form1">초기화</button>
+    <button class="button">전송</button>
+  </body>
+</html>
