@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+
+      table tr {
+        border-bottom: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        성적표
+      </caption>
+      <colgroup>
+        <col style="background-color: #e8e8e8" />
+        <col />
+        <col />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>반</th>
+          <th>이름</th>
+          <th>국어</th>
+          <th>영어</th>
+          <th>수학</th>
+          <th>평균</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">a반</td>
+          <td>황보석</td>
+          <td>90</td>
+          <td>80</td>
+          <td>100</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>김정철</td>
+          <td>80</td>
+          <td>60</td>
+          <td>100</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td rowspan="2">b반</td>
+          <td>김관훈</td>
+          <td>60</td>
+          <td>80</td>
+          <td>60</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td>이명수</td>
+          <td>60</td>
+          <td>60</td>
+          <td>60</td>
+          <td>60</td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+  </body>
+</html>
