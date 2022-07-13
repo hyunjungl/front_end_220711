@@ -7,10 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="/login" method="get" id="form1" novalidate target="_blank">
+    <form action="/login" method="post" id="form1" novalidate target="_blank">
       <input type="password" name="password" />
+      <input type="email" name="email" form="form1" />
+      <button form="form1">로그인</button>
     </form>
-    <input type="email" name="email" form="form1" />
-    <button form="form1">로그인</button>
   </body>
 </html>
