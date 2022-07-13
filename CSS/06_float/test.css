@@ -1,0 +1,42 @@
+header {
+  text-align: center;
+  background-color: #f1f1f1;
+  font-size: 0;
+  position: relative;
+}
+
+h1 {
+  line-height: 40px;
+  font-size: 16px;
+  position: absolute;
+  left: 20px;
+}
+
+ul {
+  display: inline-block;
+  font-size: 16px;
+}
+
+li {
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  background-color: red;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 40px;
+  width: 100px;
+  line-height: 40px;
+}
+
+button {
+  position: absolute;
+  right: 20px;
+  height: 40px;
+}

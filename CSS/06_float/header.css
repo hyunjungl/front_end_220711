@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 60px;
+  background: #f1f1f1;
+}
+ul {
+  font-size: 0;
+  width: 500px;
+  margin: 0 auto;
+}
+li {
+  height: 60px;
+  width: 25%;
+  text-align: center;
+
+  line-height: 60px;
+  font-size: 16px;
+  display: inline-block;
+  background: #b3b3b3;
+  /* margin: 0 10px; */
+}
+
+li a {
+  display: block;
+  text-align: center;
+}
+
+li:hover {
+  background: red;
+}
