@@ -1,0 +1,31 @@
+li.orange {
+  color: orange;
+}
+
+li.orange#big {
+  font-size: 32px;
+}
+
+li.orange.bold {
+  font-weight: 700;
+}
+
+ul > li {
+  margin-top: 10px;
+}
+
+.target > div {
+  border: 1px solid black;
+}
+
+.tabList .productList .target h2 {
+  color: red;
+}
+
+.productList .target h2 + p {
+  color: cadetblue;
+}
+
+.inputList input[type="password"] {
+  border: 2px solid red;
+}

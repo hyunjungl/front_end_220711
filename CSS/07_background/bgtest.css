@@ -1,0 +1,129 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header .gnbList::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+} */
+
+header {
+  text-align: center;
+  background-color: #b3b3b3;
+  font-size: 0;
+  position: relative;
+  height: 40px;
+}
+header .gnbList {
+  background-color: red;
+  display: inline-block;
+  font-size: 16px;
+}
+
+header .gnbList li {
+  float: left;
+  list-style: none;
+  font-size: 0;
+}
+
+header .gnbList li a {
+  display: inline-block;
+  width: 100px;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+header .gnbList li a:hover {
+  background-color: #fff;
+}
+
+header .gnbList li a:active {
+  color: #b3b3b3;
+}
+
+header .gnbList li a:focus {
+  border: 1px solid #fff;
+  outline: none;
+}
+
+.container {
+  text-align: center;
+}
+
+.container .bannerList {
+  display: inline-block;
+}
+.bannerList li {
+  display: inline-block;
+}
+
+.bannerList li {
+  font-size: 16px;
+  display: inline-block;
+
+  background-image: url(./clipart1273128.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+
+  /* text-align: center; */
+  line-height: 200px;
+  color: #fff;
+
+  margin: 10px;
+}
+
+.bannerList li:hover {
+  background-size: auto 120%;
+  color: red;
+}
+
+.first {
+  background-image: url(./sudal.jpg);
+}
+
+.second {
+  background-image: url(./cat.jpg);
+}
+
+.third {
+  background-image: url(./126588db9d20e18ebae80ad547e784ffc25c2e2a62d41e2e0d6bc0ec45bf77c4e0dc3f757cd2ea5e1690ace9288f424edb6f0c5bfd5da345f4b4c254e6d129605bb430001ecd8338c4d150572c8ec903633609e734322cd8b9.jpg);
+}
+
+.bannerList li a {
+  width: 150px;
+  height: 200px;
+  box-sizing: border-box;
+
+  display: inline-block;
+
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.bg {
+  height: 300px;
+
+  background-image: url(./clipart1273128.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.bg01 {
+  margin-top: 300px;
+  background-image: url(./clipart834319.png);
+}
+
+.bg02 {
+  background-image: url(./clipart13619.png);
+  background-position: right;
+  margin-top: 300px;
+}
