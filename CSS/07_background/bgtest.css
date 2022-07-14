@@ -9,42 +9,80 @@ a {
   width: 10px;
   height: 10px;
 } */
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 header {
   text-align: center;
   background-color: #b3b3b3;
   font-size: 0;
   position: relative;
-  height: 40px;
+  height: 36px;
 }
+
 header .gnbList {
   background-color: red;
   display: inline-block;
   font-size: 16px;
+  height: 36px;
+  overflow: hidden;
 }
 
-header .gnbList li {
+header .gnbList:hover {
+  height: auto;
+  overflow: visible;
+}
+
+.depth01 > a {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.depth01 > a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+header .gnbList .depth01::after {
+  content: "";
+  display: none;
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  position: absolute;
+  top: 34px;
+  left: 0;
+}
+header .gnbList .depth01:hover::after {
+  display: block;
+}
+header .gnbList .depth01 {
   float: left;
   list-style: none;
-  font-size: 0;
+  position: relative;
 }
 
-header .gnbList li a {
+header .gnbList .depth01 > a {
   display: inline-block;
   width: 100px;
   padding: 10px 0;
-  font-size: 16px;
 }
 
-header .gnbList li a:hover {
-  background-color: #fff;
+header .gnbList .depth01 > ul li {
+  margin: 10px 0;
+}
+header .gnbList > .depth01 > a:hover {
+  /* background-color: #fff; */
 }
 
-header .gnbList li a:active {
+header .gnbList > .depth01 > a:active {
   color: #b3b3b3;
 }
 
-header .gnbList li a:focus {
+header .gnbList .depth01 a:focus {
   border: 1px solid #fff;
   outline: none;
 }
