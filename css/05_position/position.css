@@ -4,7 +4,13 @@ body {
 
 .container {
   height: 300px;
+
   border: 3px solid red;
+
+  border-width: 1px;
+  border-color: red;
+  border-style: solid;
+
   margin-top: 100px;
   position: relative;
 }

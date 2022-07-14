@@ -1,0 +1,116 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+
+header {
+  text-align: center;
+  background-color: #b3b3b3;
+  font-size: 0;
+}
+header .gnbList {
+  font-size: 16px;
+  background-color: red;
+  display: inline-block;
+}
+
+
+header .gnbList li {
+  float: left;
+}
+header .gnbList li a {
+  display: inline-block;
+  width: 100px; 
+  padding: 10px 0;
+}
+
+header .gnbList li a:hover {
+  background-color: #fff;
+}
+
+header .gnbList li a:active {
+  color: #b2b2b2;
+}
+
+header .gnbList li a:focus {
+  outline-color: 1px solid yellow;
+}
+
+/* 배너 */
+
+.container {
+  text-align: center;
+}
+
+.container .bannerList {
+  display: inline-block;
+}
+
+.bannerList li {
+  display: inline-block;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 4px;
+
+  /* text-align: left; */
+  line-height: 200px;
+  color: #fff;
+
+  margin: 10px;
+}
+
+.bannerList li:hover {
+  background-size: auto 120%;
+  color: red;
+}
+
+.first {
+  background-image: url("./otter-7307280_640.jpg");
+  background-position: right;
+}
+
+.second {
+  background-image: url("./png-2702697_640.png");
+}
+.third {
+  background-image: url("./img.png");
+}
+
+.bannerList li a {
+  display: inline-block;
+
+  width: 150px;
+  height: 200px;
+
+  /* border-radius: 4px; */
+}
+
+.bg {
+  height: 300px;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.bg01 {
+  margin-top: 300px;
+  background-image: url("./otter-7307280_640.jpg");
+}
+.bg02 {
+  background-image: url("./img.png");
+  background-position: right;
+  margin-top: 300px;
+}
