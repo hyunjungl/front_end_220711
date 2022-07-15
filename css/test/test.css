@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: 1000px;
 }
@@ -23,21 +27,27 @@ header {
 #header {
   height: 36px;
 }
+
 header .gnbList {
   font-size: 16px;
   background-color: red;
   display: inline-block;
   height: 36px;
   overflow: hidden;
+  transition: 0.25s;
 }
 
 header .gnbList:hover {
-  height: initial;
+  height: 200px;
 }
 
-.depth01 > a:hover {
-  border-bottom: 2px solid #fff;
+header .gnbList .depth01 {
+  float: left;
+  position: relative;
 }
+/* .depth01 > a:hover {
+  border-bottom: 2px solid #fff;
+} */
 header .gnbList .depth01::after {
   /* content: "";
   display: none;
@@ -48,14 +58,11 @@ header .gnbList .depth01::after {
   top: 34px;
   left: 0; */
 }
+
 header .gnbList .depth01:hover::after {
   display: block;
 }
 
-header .gnbList .depth01 {
-  float: left;
-  position: relative;
-}
 header .gnbList .depth01 > a {
   display: inline-block;
   width: 100px;
@@ -93,7 +100,7 @@ header .gnbList li a:focus {
 .bannerList li {
   display: inline-block;
 
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -101,15 +108,15 @@ header .gnbList li a:focus {
   border: 1px solid black;
   border-radius: 4px;
 
-  /* text-align: left; */
   line-height: 200px;
   color: #fff;
 
   margin: 10px;
+  transition: 0.25s;
 }
 
 .bannerList li:hover {
-  background-size: auto 120%;
+  background-size: auto 110%;
   color: red;
 }
 
@@ -149,4 +156,53 @@ header .gnbList li a:focus {
   background-image: url("./img.png");
   background-position: right;
   margin-top: 300px;
+}
+
+/* 채팅상담 버튼 */
+.chat {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: 3px solid #000;
+  opacity: 0;
+  transition: 0.25s;
+  animation-name: slideUp, fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.chat:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* 초기값 설정 x => 원래 포지션 기준으로 움직임. animation-fill-mode 설정 필요 */
+@keyframes slideUp {
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+/* 초기값을 설정 => 애니메이션이 끝난위치와 원래 위치가 동일 => animation-fill-mode 필요 X */
+@keyframes slideUp02 {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

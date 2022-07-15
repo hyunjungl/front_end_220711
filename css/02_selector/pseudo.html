@@ -10,7 +10,7 @@
         list-style: none;
       }
       /* 자식요소 중 n번째인지 확인. */
-      ul li:nth-child(even) {
+      ul li:nth-child(3) {
         /* n : 모든 인덱스. => 계산을 더하면 다양하게 인덱싱 가능. */
         /* odd(홀수), even(짝수) */
         background-color: #b1b1b1;
@@ -39,16 +39,20 @@
         margin-top: 50px;
       }
 
+      .parent::before {
+        content: "before";
+        display: block;
+      }
       .parent::after {
-        content: "애프터";
+        content: url("./img.png");
         color: red;
         margin-left: 20px;
       }
-      
     </style>
   </head>
   <body>
     <ul>
+      <div></div>
       <li>
         첫번째
         <a href="" class="target"></a>
@@ -69,11 +73,9 @@
       <div>뉴발란스</div>
     </div>
 
-    <input type="text">
-    <input type="text" required>
+    <input type="text" />
+    <input type="text" required />
 
-    <div class="parent">
-      저는 부모입니다.
-    </div>
+    <div class="parent">저는 부모입니다.</div>
   </body>
 </html>
