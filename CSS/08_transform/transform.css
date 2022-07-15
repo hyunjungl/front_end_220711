@@ -1,0 +1,134 @@
+body {
+  padding-bottom: 200px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #e9e9e9;
+  text-align: center;
+  line-height: 100px;
+  display: inline-block;
+}
+
+.box + .box {
+  margin-top: 20px;
+}
+
+.container {
+  /* 원근감을 준다. 값이 클수록 멀리서 보는 듯한 효과(변화가 적다) */
+  perspective: 300px;
+  perspective-origin: bottom right;
+}
+
+/* translate */
+.translateList .box:first-child:hover {
+  /* 마우스 호버 시 x축 방향으로 20px 이동. */
+  transform: translateX(-20px);
+
+  transform: translate3d(10px, 30px, 100px);
+
+  /* transition: 0.5s; */
+}
+
+.translateList .box:nth-child(2):hover {
+  /* 마우스 호버 시 y축 방향으로 10px 이동 */
+  transform: translateY(-10px);
+}
+
+.translateList .box:nth-child(3):hover {
+  /* 마우스 호버 시 x축 10px, y축 10px 이동 */
+  transform: translate(10px, 10px);
+}
+
+.translateList .box:last-child:hover {
+  transform: perspective(30px) translateZ(30px);
+}
+
+/* scale */
+.scaleList .box:first-child:hover {
+  /* X축 방향을 1.1배로 확대. 비율을 입력해야 한다. */
+  /* 컨텐츠도 같이 확대/축소 */
+  transform-origin: right;
+  transform: scaleX(1.1);
+  transform: scaleX(150%);
+  transform: scaleX(90%);
+  /* 음수값 입력시 요소가 반전됨. */
+  transform: scaleX(-100%);
+}
+
+.scaleList .box:nth-child(2):hover {
+  transform: scaleY(1.2);
+  /* 변형되는 기준축을 바꾼다 */
+  transform-origin: bottom;
+  /* transform: scaleY(-1); */
+}
+.scaleList .box:nth-child(3):hover {
+  /* X축으로 1.5배,, y축으로 2배 확대 */
+  transform: scale(1.5, 2);
+  /* 1개만 입력시 x,y축 모두 1.2배 */
+  transform: scale(1.2);
+}
+
+.scaleList .box:last-child:hover {
+  transform: scaleZ(-0.9);
+}
+/* rotate */
+.rotateList .box:first-child:hover {
+  /* 시계 방향으로 90도 회전. 음수 입력시 반시계 방향으로 회전 */
+  transform: rotate(90deg);
+}
+
+.rotateList .box:nth-child(2):hover {
+  /* x축을 기준으로 회전 */
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+}
+.rotateList .box:last-child:hover {
+  transform-origin: left;
+  transform: rotateY(30deg);
+}
+
+/* skew */
+.skewList .box:first-child:hover {
+  transform: skewX(30deg);
+}
+
+.skewList .box:nth-child(2):hover {
+  transform: skewY(20deg);
+}
+
+.skewList .box:last-child:hover {
+  /*  */
+  transform: skew(10deg, 20deg);
+}
+.dice {
+  margin-top: 100px;
+  perspective-origin: left bottom;
+  padding: 30px;
+}
+
+.surface {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+
+.surface:first-child {
+  transform-origin: top;
+  background-color: rgba(255, 0, 0, 0.4);
+  transform: rotateX(90deg);
+}
+
+.surface:nth-child(2) {
+  transform-origin: right;
+  background-color: red;
+  transform: rotateY(90deg);
+}
+
+.surface:nth-child(3) {
+  transform-origin: left;
+  background-color: red;
+  transform: rotateY(-90deg);
+}

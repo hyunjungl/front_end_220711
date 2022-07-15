@@ -29,11 +29,11 @@ header .gnbList {
   font-size: 16px;
   height: 36px;
   overflow: hidden;
+  transition: 0.25s;
 }
 
 header .gnbList:hover {
-  height: auto;
-  overflow: visible;
+  height: 200px;
 }
 
 .depth01 > a {
@@ -103,7 +103,7 @@ header .gnbList .depth01 a:focus {
   display: inline-block;
 
   background-image: url(./clipart1273128.png);
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -114,6 +114,7 @@ header .gnbList .depth01 a:focus {
   color: #fff;
 
   margin: 10px;
+  transition: 0.25s;
 }
 
 .bannerList li:hover {
@@ -121,15 +122,15 @@ header .gnbList .depth01 a:focus {
   color: red;
 }
 
-.first {
+.bannerList .first {
   background-image: url(./sudal.jpg);
 }
 
-.second {
+.bannerList .second {
   background-image: url(./cat.jpg);
 }
 
-.third {
+.bannerList .third {
   background-image: url(./126588db9d20e18ebae80ad547e784ffc25c2e2a62d41e2e0d6bc0ec45bf77c4e0dc3f757cd2ea5e1690ace9288f424edb6f0c5bfd5da345f4b4c254e6d129605bb430001ecd8338c4d150572c8ec903633609e734322cd8b9.jpg);
 }
 
@@ -164,4 +165,43 @@ header .gnbList .depth01 a:focus {
   background-image: url(./clipart13619.png);
   background-position: right;
   margin-top: 300px;
+}
+
+/* 채팅 상담 버튼 */
+.box {
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  border: 1px solid black;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 80px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: 3px solid #000;
+  opacity: 0;
+  animation-name: slideUp, fadeInText;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: 0.25s;
+}
+.box:hover {
+  background-color: #fff;
+  color: #000;
+}
+/* 초기값 설정 x =>원래 포지션 기준으로 움직임. animaiton-fill-mode설정 필요 */
+@keyframes slideUp {
+  to {
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes fadeInText {
+  100% {
+    opacity: 1;
+  }
 }
