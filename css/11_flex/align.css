@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  width: 500px;
+  height: 300px;
+  border: 3px solid lightgreen;
+  flex-direction: row;
+
+  /* 주축에 대한 아이템들의 정렬을 지정한다. */
+  justify-content: flex-end;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  justify-content: center;
+
+  align-items: flex-end;
+  align-items: stretch;
+}
+
+.box {
+  display: flex;
+
+  color: #fff;
+  padding: 20px;
+  width: 200px;
+  background-color: red;
+  /* margin: 5px; */
+  margin-left: -5px;
+}
+
+.redButton {
+  background: red;
+  width: 200px;
+}
