@@ -23,8 +23,6 @@
 
 .container .box.disappear {
   animation-name: disappear;
-  animation: name duration timing-function delay iteration-count direction
-    fill-mode;
 }
 
 /* 값의 변화를 작성. */
