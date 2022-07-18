@@ -16,30 +16,65 @@ a {
 }
 
 header {
-  text-align: center;
-  background-color: #b3b3b3;
+  background-color: rgb(250, 183, 205);
   font-size: 0;
   position: relative;
   height: 36px;
+
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+header h1 {
+  position: absolute;
+  height: 36px;
+  line-height: 36px;
+  top: 0;
+  left: 0;
+}
+header .btn {
+  position: absolute;
+  right: 0;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 35px;
 }
 
 header .gnbList {
-  background-color: red;
-  display: inline-block;
+  display: flex;
+
+  background-color: pink;
   font-size: 16px;
   height: 36px;
   overflow: hidden;
   transition: 0.25s;
+  text-align: center;
+}
+
+header .gnbList .depth01 {
+  flex: 1;
+  text-align: center;
 }
 
 header .gnbList:hover {
   height: 200px;
 }
 
+.login {
+  background-color: white;
+  border: 1px solid rgb(243, 155, 170);
+  border-radius: 10px;
+}
+
 .depth01 > a {
   display: block;
   box-sizing: border-box;
-  height: 100%;
 }
 
 .depth01 > a:hover {
@@ -60,13 +95,13 @@ header .gnbList .depth01:hover::after {
   display: block;
 }
 header .gnbList .depth01 {
-  float: left;
+  /* float: left; */
   list-style: none;
   position: relative;
 }
 
 header .gnbList .depth01 > a {
-  display: inline-block;
+  display: block;
   width: 100px;
   padding: 10px 0;
 }
@@ -88,6 +123,11 @@ header .gnbList .depth01 a:focus {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
 }
 
@@ -119,7 +159,7 @@ header .gnbList .depth01 a:focus {
 
 .bannerList li:hover {
   background-size: auto 120%;
-  color: red;
+  color: black;
 }
 
 .bannerList .first {
