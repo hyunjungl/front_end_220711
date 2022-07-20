@@ -1,0 +1,51 @@
+@media (max-width: 768px) {
+  header .gnbList {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  header .gnbList:hover .depth01 ul {
+    display: block;
+  }
+}
+
+@media (max-width: 580px) {
+  header .gnbList {
+    /* flex-direction: column; */
+    /* align-items: center; */
+
+    display: block;
+    width: auto;
+    /* height: 36px;
+      overflow: hidden; */
+  }
+  header .gnbList .depth01 {
+    display: none;
+  }
+  header .gnbList .depth01:first-child {
+    display: block;
+  }
+
+  header .gnbList.on .depth01 {
+    display: block;
+  }
+
+  /* header .gnbList:active {
+      height: 200px;
+    } */
+}
+
+@media (max-width: 640px) {
+  .container .bannerList {
+    flex-direction: column;
+  }
+  .container .bannerList li {
+    width: 80px;
+    height: 140px;
+  }
+  /* .container .bannerList li a {
+      width: 100%;
+      height: 100%;
+    } */
+}

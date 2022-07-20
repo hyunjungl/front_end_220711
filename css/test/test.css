@@ -1,3 +1,6 @@
+/* @import "./media.css"; */
+@import "./common.css";
+
 * {
   box-sizing: border-box;
 }
@@ -34,32 +37,31 @@ header h1 {
   height: 36px;
   line-height: 36px;
 }
-header .btns {
+header .btnHome {
   position: absolute;
+  cursor: pointer;
   right: 10px;
-  height: 36px;
-  line-height: 36px;
-}
-
-#header {
-  height: 36px;
+  top: 16px;
+  transform: translateY(-50%);
+  padding: 5px;
 }
 
 header .gnbList {
   display: flex;
-  width: 400px;
+  /* width: 400px; */
   background-color: red;
-  height: 36px;
-  overflow: hidden;
+  /* height: 36px;
+  overflow: hidden; */
   transition: 0.25s;
   text-align: center;
 }
 header .gnbList .depth01 {
-  flex: 1;
+  /* flex: 1;1 */
+  width: 100px;
 }
 
-header .gnbList:hover {
-  height: 200px;
+header .gnbList .depth01 ul {
+  display: none;
 }
 
 header .gnbList .depth01:hover::after {
@@ -94,6 +96,7 @@ header .gnbList li a:focus {
 .container {
   display: flex;
   justify-content: center;
+  padding-top: 50px;
 }
 
 .container .bannerList {
@@ -110,7 +113,9 @@ header .gnbList li a:focus {
   border: 1px solid black;
   border-radius: 4px;
 
-  line-height: 200px;
+  width: 150px;
+  height: 200px;
+
   color: #fff;
 
   margin: 10px;
@@ -135,10 +140,10 @@ header .gnbList li a:focus {
 }
 
 .bannerList li a {
-  display: inline-block;
-
-  width: 150px;
-  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 
   /* border-radius: 4px; */
 }

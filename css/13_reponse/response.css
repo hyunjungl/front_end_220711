@@ -1,0 +1,12 @@
+.container .box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+/* 미디어 */
+@media screen and (max-width: 600px) {
+  .container .box {
+    background: blue;
+  }
+}

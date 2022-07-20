@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --border-color: rgb(219, 219, 219);
+}
 
 a {
   color: inherit;
