@@ -1,0 +1,14 @@
+{
+  "name": "front_end_220711",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hbs30832/front_end_220711.git",
+  "author": "hbs30832 <hbs9312@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "scripts": {
+    "yarn start" : "nodemon src"
+  }
+}
