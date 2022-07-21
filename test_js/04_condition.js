@@ -15,13 +15,15 @@ if (age >= 30) {
   console.log("30가가 아닙니다.");
 }
 
-// if ~ else if문 : 조건식이 true인 if 혹은 else if문의 코드 실행.
+// if ~ else if문 : else if 를 통해 다양한 조건 추가 가능
 // 모든 조건식이 false인 경우 else문 실행
-let data = "황보석";
+let data = [1, 2, 3];
 if (typeof data === "string") {
   console.log("문자열 데이터입니다.");
 } else if (typeof data === "number") {
   console.log("숫자형 데이터입니다.");
+} else if (typeof data === "object") {
+  console.log("객체형 데이터입니디다.");
 } else {
   console.log("문자열도 숫자형도 아닙니다.");
 }

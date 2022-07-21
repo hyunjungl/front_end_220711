@@ -27,13 +27,13 @@ console.log(score);
 score = 100; // score라는 변수에 100이라는 값을 재할당.
 
 // 선언과 할당 동시에 가능 => 초기화.
-console.log("firstName : ", firstName); // 선언부분만 호이스팅.
+console.log("firstName : ", firstName); // 선언부분만 호이스팅. undefind 출력
 var firstName = "seok";
 
 // 참조 : 변수에 저장된 값을 읽는다.
 console.log(firstName); // fistName 변수의 값을 참조하여 출력
 
-// 변수 이름 특수문자 제외 문자, 숫자, _(언더), $ 사용 가능
+// 변수 이름 특수문자 제외 문자, 숫자, _(언더바), $ 사용 가능
 // 변수 이름은 숫자로 시작 할 수 없다. ex) var 01num; => 에러.
 // 변수 이름은 대소문자 구분 => firstname과 FIRSTNAME은 다른 변수이다.
 

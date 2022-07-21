@@ -7,7 +7,7 @@ console.log(10 > 4); // 10과 4를 비교해서 true라는 새로운 값 생성
 console.log(5 + 1); // 더하기
 console.log(6 - 4); // 빼기
 console.log(20 * 20); // 곲하기
-console.log(20 / 4); // 나누기 => 몫
+console.log(20 / 4); // 나누기
 console.log(20 % 3); // 나누기 => 나머지
 console.log(4 - 2 * 4); // 사칙연산 적용 => 4 - (2 * 4) => -4 반환
 
@@ -50,12 +50,13 @@ console.log(score);
 // 동등 연산자 : 좌항과 우항이 동등한지를 비교
 console.log("3 == 1 + 2 : ", 3 == 1 + 2);
 console.log("3 == '3' : ", 3 == "3"); // == 연산자는 암묵적 자료형 변환(형변환)
-console.log("0 == '' : ", 0 == "");
+console.log("0 == '' : ", 0 == ""); // false는 0으로 평가
 console.log("false == 0 : ", false == 0); // 0은 falsy한 값
 
 // 일치 연산자 : 좌항과 우항이 일치한지를 비교 => 값과 데이터 타입을 비교
 console.log("3 === 1 + 2 : ", 3 === 1 + 2);
 console.log("3 === '3' : ", 3 === "3");
+
 console.log("0 === '' : ", 0 === "");
 console.log("false === 0 : ", false === 0);
 
