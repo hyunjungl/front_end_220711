@@ -138,3 +138,28 @@ function repeatCal(n, startNum, callback) {
 
 console.log(repeatCal(5, 10, sumNum));
 console.log(repeatCal(10, 10, subNum));
+
+function useCallback(func) {
+  func(1);
+}
+
+useCallback(function (num) {
+  console.log(num);
+});
+
+let user = {
+  age: 30,
+  greeting: function (func) {
+    func(this.age);
+    console.log("시작!");
+    console.log("끝!");
+  },
+};
+
+user.greeting(function (age) {
+  console.log(`저는 ${age}살입니다.`);
+});
+
+user.greeting(function (age) {
+  console.log(`저는 ${age - 1}살입니다.`);
+});
