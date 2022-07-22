@@ -1,0 +1,186 @@
+header {
+  position: inherit;
+
+  height: 40px;
+
+  background: #C3C3C3;
+}
+
+header:hover {
+  height: 200px;
+}
+
+header h1 {
+  position: absolute;
+
+  height: 40px;
+  width: 100px;
+
+}
+
+header .menu:hover {
+  height:200px;
+}
+
+  header .menu .list .sublist {
+  display: flex;
+  
+
+  width: 300px;
+  font-size: 16px;
+  height: 40px;
+  background-color: #AAAAAA;
+
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+
+
+header .burger {
+  position: absolute;
+  right: 0;
+  height: 60px;
+  width: 100px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+
+.slider {
+  height: 350px;
+
+  background: #EFEFEF;
+
+  background-image: url(./bts.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.container {
+  height: 480px;
+
+  background: #D9D9D9;
+
+
+}
+
+.container .pics {
+  display: flex;
+  justify-content: center;
+
+  transform: translate(0, 25%);
+
+}
+
+.pics li:hover {
+  background-size: auto 120%;
+  color: blueviolet;
+}
+
+.pics .pic1 {
+
+  width: 250px;
+  height: 300px;
+
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 280px;
+
+
+  background: #E4E4E4;
+  border-radius: 8px;
+
+  float: left;
+
+  background-image: url(./JIN.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pics .pic2 {
+  width: 250px;
+  height: 300px;
+  margin-left: 30px;
+
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 280px;
+
+
+  background: #E4E4E4;
+  border-radius: 8px;
+
+  float: left;
+
+  background-image: url(./MIN.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.pics .pic3 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 280px;
+
+  width: 250px;
+  height: 300px;
+  margin-left: 30px;
+
+
+  background: #E4E4E4;
+  border-radius: 8px;
+
+  float: left;
+
+  background-image: url(./V.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.question {
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  
+
+  float: right;
+
+  text-align: center;
+  line-height: 100px;
+  font-size: 25px;
+ 
+
+
+  background: #FFFFFF;
+
+  animation-name: slideUp, fadeInText;
+  animation-direction: initial;
+  animation-duration: 0.5s;
+  animation-timing-function: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+  from  {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+
+
