@@ -1,0 +1,194 @@
+header {
+  background: #C3C3C3;
+  height: 60px;
+  transition: 0.25s;
+
+}
+
+h1 {
+  width: 150px;
+
+  background: #FFFFFF;
+
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  font-weight: 400px;
+
+  float: left;
+}
+
+header>.menu {
+  width: 520px;
+  height: 60px;
+  margin-left: 450px;
+  background: #AAAAAA;
+  line-height: 60px;
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+
+  transition: 0.25s;
+
+  overflow: hidden;
+
+}
+
+.menu>.menu01 {
+  width: 160px;
+
+  display: inline-block;
+  text-align: center;
+
+}
+
+.menu>.menu01>.submenu {
+
+  position: absolute;
+
+}
+
+
+.submenu>li {
+  width: 130px;
+  height: 35px;
+
+  background: #BBBBBB;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+header:hover {
+  height: 200px;
+}
+
+.menu:hover {
+  height: 60px;
+  overflow: visible;
+
+}
+
+.bar img {
+  width: 60px;
+  height: 60px;
+
+  background: #D9D9D9;
+
+  margin-right: 20px;
+  float: right;
+}
+
+.slider {
+  background-image: url(./BTS.jpg);
+  background-size: cover;
+  background-position: 50%;
+  height: 400px;
+}
+
+.boxes {
+  height: 500px;
+  background: #D9D9D9;
+  text-align: center;
+  line-height: 300px;
+  color: white;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxes li:hover {
+  background-size: auto 120%;
+  color: blueviolet;
+}
+
+.box1 {
+  width: 250px;
+  height: 300px;
+  border-radius: 8px;
+
+  background-image: url(./JIN.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.box2 {
+  width: 250px;
+  height: 300px;
+  border-radius: 8px;
+  margin-left: 20px;
+
+  background-image: url(./MIN.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.box3 {
+  width: 250px;
+  height: 300px;
+  border-radius: 8px;
+  margin-left: 20px;
+
+  background-image: url(./V.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  background: #FFFFFF;
+
+
+  float: right;
+
+  text-align: center;
+  line-height: 100px;
+  font-size: 25px;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  animation-name: slideUp;
+  animation-duration: 1s;
+
+
+}
+
+.question {
+  opacity: 0;
+
+  animation-name: fadeIn;
+  animation-duration: 2s;
+
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(-50px);
+  }
+}
