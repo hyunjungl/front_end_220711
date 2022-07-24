@@ -50,7 +50,9 @@ header>.menu {
   position: absolute;
 
 }
-
+ .menu01 > a {
+color: white;
+ }
 
 .submenu>li {
   width: 130px;
