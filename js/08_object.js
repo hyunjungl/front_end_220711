@@ -7,9 +7,12 @@ let user = {
   height: 173,
 };
 
-console.log(user.age);
+// 객체의 프로퍼티를 참조
+console.log(user.age); // 30 출력
+// 객체의 프로퍼티 값 할당
 user.age = 31;
 user.weight = 70; // 없는 키값에 할당하면 새로운 프로퍼티 생성
+console.log(user); // { age: 31, name: 'seok', height: 173, weight: 70 }
 console.log("몸무게 : ", user["weight"]); // 객체["키값"] 처럼 [] 안에 문자열로 참조 가능
 // react에서 자세히 설명
 
@@ -22,7 +25,7 @@ console.log(user);
 console.log(user.color); // 없는 키값을 참조하면 undefined
 console.log(user.age, user.weight);
 
-// 메서드 : 객체의 프로퍼티값으로 지정된 함수.
+// 메서드 : 객체의 프로퍼티 값으로 지정된 함수.
 // 메서드 호출 => 객체.메서드이름(); 형태로 실행
 let dog = {
   age: 10,
@@ -31,7 +34,7 @@ let dog = {
     console.log("멍멍!");
   },
 };
-dog.bow();
+dog.bow(); // "멍멍!"" 출력
 
 // this : 메서드를 호출한 객체를 가르킨다. => user.greeting();의 user가 this에 해당
 // this를 통해서 객체 고유값을 참조하는 메서드를 만들 수 있다.
@@ -54,8 +57,8 @@ let user03 = {
   },
 };
 
-user02.greeting();
-user03.greeting();
+user02.greeting(); // "안녕하세요 seok입니다."
+user03.greeting(); // "안녕하세요 minsu입니다."
 
 let rect = {
   width: 100,
@@ -65,7 +68,7 @@ let rect = {
   },
 };
 
-rect.getArea();
+rect.getArea(); // 10000 출력
 
 // 메서드 내부에서 함수 실행시 this가 제대로 가르켜지지 않는다.
 //   => 화살표 함수는 this가 없기 때문에 상위 함수의 this를 찾아간다.
@@ -80,7 +83,12 @@ let obj = {
     let inner = () => console.log(this.name);
     inner();
   },
+
+  greeting: () => {
+    console.log(this.name);
+  },
 };
+obj.greeting();
 
 obj.outer();
 

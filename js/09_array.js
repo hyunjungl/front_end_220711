@@ -16,7 +16,7 @@ console.log(arr);
 console.log(arr[arr.length - 1]); // 배열의 마지막을 가르킨다.
 
 // 배열의 값 제거
-// delete 키워드를 통해서 삭제가 가능 => 배열의 길이가 바뀌지 않는다.
+// delete 키워드를 통해서 삭제가 가능 => 배열의 길이가 바뀌지 않는다. 권장 x
 delete arr[2];
 console.log(arr, arr.length);
 
@@ -24,9 +24,9 @@ console.log(arr, arr.length);
 // 배열 맨 마지막에 값 추가, 제거
 // push와 pop : 배열의 마지막에 값을 추가, 제거 => 원본 배열을 변화.
 let result = arr.push(6, 7, "js"); // 새로 추가 후의 배열의 길이를 반환.
-console.log(result, arr);
+console.log(result, arr); // 8, [1,2,3, "황보석", "프론트엔드", 6,7, "js"]
 result = arr.pop(); // 제거된 요소를 반환 => 다른 배열로 이동 시킬 때 사용
-console.log(result, arr);
+console.log(result, arr); // "js", [1,2,3, "황보석", "프론트엔드", 6,7]
 
 // unshift, shift => push, pop과 반대로 배열의 시작에 요소를 추가 및 제거
 arr.unshift("추가!", "두번째 추가!");
@@ -39,9 +39,9 @@ console.log("------------");
 // array.splice(시작인덱스, 삭제할 개수, 추가할 값들...);
 let newArr = [1, 20, 30, 4, 5];
 let newResult = newArr.splice(1, 2, 2, 3); // 제거한 요소들을 배열로 모아서 반환
-console.log(newResult, newArr);
+console.log(newResult, newArr); // [20,30], [1,2,3,4,5]
 newArr.splice(0, 2);
-console.log(newArr);
+console.log(newArr); // [3,4,5]
 newArr.splice(1, 0, 1, 2); // 삭제 개수를 0개로 지정하여 값을 추가만 한다.
 console.log(newArr);
 
