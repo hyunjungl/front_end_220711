@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container .inner {
+        width: 150px;
+        height: 200px;
+        position: relative;
+        perspective: 300px;
+      }
+      .container .card {
+        width: 90%;
+        height: 90%;
+        background-color: #f2f2f2;
+        border: 1px solid black;
+        border-radius: 8px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </div>
+    <script>
+      let conatainer = document.querySelector(".container");
+      let cardList = document.querySelectorAll(".card");
+
+      let middleY = window.innerHeight / 2;
+      let middelX = window.innerWidth / 2;
+      conatainer.addEventListener("mousemove", function (e) {
+        console.log(e.clientY);
+
+        cardList.forEach((card, idx) => {
+          let x = ((e.clientX - middelX) * idx) / 10;
+          let y = ((e.clientY - middleY) * idx) / 10;
+          let z = -((e.clientY - middleY) * (cardList.length - idx)) / 10;
+          card.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`;
+        });
+      });
+      let innerElem = document.querySelector(".inner");
+    </script>
+  </body>
+</html>

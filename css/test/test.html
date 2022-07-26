@@ -73,7 +73,23 @@
     <div class="bg02 bg"></div> -->
     <div class="chat">?</div>
     <div class="modalBg">
-      <div class="modal"></div>
+      <div class="modal">
+        <button>닫기</button>
+      </div>
     </div>
+
+    <script>
+      let modalBg = document.querySelector(".modalBg");
+      let btnCloseModal = modalBg.querySelector("button");
+      let btnChat = document.querySelector(".chat");
+      btnCloseModal.addEventListener("click", function (e) {
+        modalBg.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      });
+      btnChat.addEventListener("click", function () {
+        modalBg.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      });
+    </script>
   </body>
 </html>
