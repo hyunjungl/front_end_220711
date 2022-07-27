@@ -42,6 +42,7 @@ function square(num) {
 }
 console.log(square(4));
 
+<<<<<<< HEAD
 // 짝수인지 홀수인지 출력하는 함수
 function printNumType(num) {
   //   if (num % 2 === 0) {
@@ -163,3 +164,8 @@ user.greeting(function (age) {
 user.greeting(function (age) {
   console.log(`저는 ${age - 1}살입니다.`);
 });
+=======
+// 문제 세 숫자의 평균을 구하는 함수 => 함수의 값 출력
+//   => 심화 => 함수를 두개로 분리.
+
+// 짝수인지 홀수인지 출력하는 함수
