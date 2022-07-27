@@ -28,8 +28,8 @@ for (let i = 0; i < numArr.length; i++) {
 // 1. forEach() : 각 요소를 인자로 전달받아 콜백 함수를 한번씩 실행(배열의 길이만큼)
 //   => 콜백함수의 첫번째 인자로 배열의 각 요소, 두번째 인자로 각 요소의 인덱스값을 전달
 //   => forEach(콜백함수(요소, 인덱스))
-numArr.forEach(function (n, i) {
-  console.log(i + "번째", n);
+numArr.forEach(function (num, i) {
+  console.log(i + "번째", num);
 });
 
 // 짝수를 새로운 배열에 모으기
@@ -88,7 +88,8 @@ console.log(userResult02);
 //  => 기존 배열 변경 x
 let numArr02 = [4, 6, 7, 10]; // => [8,12,14,20]
 let doubleNumArr = numArr02.map(function (num) {
-  return num * 2;
+  let result = num * 2;
+  return result;
 });
 // 화살표 함수 활용
 let divideNumArr = numArr02.map((num) => num / 2);
@@ -145,7 +146,8 @@ let actionMovieNameList = actionMovieList.map((movie) => movie.title);
 console.log(actionMovieList);
 console.log(actionMovieNameList);
 
-// reduce
+// reduce : 누산기
+// 특정 연산을 반복 실행한 결과를 누적해서 반환
 let scoreList = [90, 80, 70, 70, 60];
 
 let totalScore = 0;
@@ -156,11 +158,11 @@ console.log(totalScore);
 
 let total = scoreList.reduce(function (acc, curr) {
   return acc + curr;
-}, 0);
+}, 10);
 let totalWithArrow = scoreList.reduce((acc, curr) => acc + curr, 0);
 
 // 콜백
-let total03 = scoreList.reduce(sum, 0);
+let total03 = scoreList.reduce(sum, 10);
 
 function sum(a, b) {
   return a + b;
