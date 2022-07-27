@@ -3,7 +3,6 @@
 <<<<<<< HEAD
 
 =======
->>>>>>> 5fa09bac4308e7ea2d3e501f0c598da4a1130496
 // 전역 스코프 : 어디서든 접근이 가능한 범위
 // 전역 변수 : 가장 바깥에 선언된 변수들
 let globalNum = 3;
@@ -18,7 +17,6 @@ function sum(a, b) {
 function sum(a, b) {
   return a + b;
 }
->>>>>>> 5fa09bac4308e7ea2d3e501f0c598da4a1130496
 function consoleGlobalNum() {
   // 지역 스코프 : 코드 블록 내의 범위
   //  지역 변수 : 지역 스코프 내에 선언된 변수들
@@ -30,7 +28,6 @@ function consoleGlobalNum() {
 <<<<<<< HEAD
 
 =======
->>>>>>> 5fa09bac4308e7ea2d3e501f0c598da4a1130496
 function addGlobalNum(num) {
   globalNum = globalNum + num;
 }
@@ -40,7 +37,6 @@ console.log(globalNum);
 <<<<<<< HEAD
 
 =======
->>>>>>> 5fa09bac4308e7ea2d3e501f0c598da4a1130496
 function outer() {
   let outerNum = 10;
   //   console.log(outerNum, innerNum); 하위 스코프의 변수 참조 불가능
