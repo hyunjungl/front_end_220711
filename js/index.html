@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="textBox">테스트</div>
+    <canvas> </canvas>
+    <script>
+      let textBox = document.querySelector(".textBox");
+      let canvas = document.querySelector("canvas");
+      let ctx = canvas.getContext("2d");
+
+      ctx.beginPath();
+      ctx.fillRect(0, 0, 100, 100);
+
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(0, 0, 20, 0, Math.PI * 2);
+      ctx.fill();
+    </script>
+  </body>
+</html>
