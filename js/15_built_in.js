@@ -63,6 +63,7 @@ console.log(Math.PI); // 파이값
 console.log(Math.sin(Math.PI / 2)); // sin값
 
 let float = 1.53123;
+// Number의 메서드
 console.log(parseInt(float)); // 실수를 정수로 변환
 
 // 소숫점 이하 내림
@@ -81,7 +82,7 @@ console.log(Math.floor(115 / 10) * 10);
 // 소숫점 이하 100의 자리만 올림 => 11.11 => 11.2
 console.log(Math.ceil(11.11 * 10) / 10);
 
-// 랜덤 : 0~1사이의 실수를 반환
+// 랜덤 : 0~1사이의 랜덤한 실수를 반환(실제 랜덤은 아니다)
 console.log(Math.random());
 
 // 랜덤 => 0 >= x < 1

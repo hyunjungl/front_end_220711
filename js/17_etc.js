@@ -1,5 +1,3 @@
-// rest
-
 // js는 정의된 매개변수보다 전달된 인자가 많아도 오류 발생 x
 function sum(a, b) {
   return a + b;
@@ -34,11 +32,13 @@ console.log(getSub(1, 2, 3, 4, 5, 6));
 // 배열을 펼친다. [1,2,3] => 1,2,3
 // [] 안에 넣으면 배열 복사와 동일한 효과 => 앞뒤에 값을 요소를 추가한 것과 같은효과
 let numArr = [1, 2, 3, 4, 5]; // => 1, 2, 3, 4, 5
-let newArr = [0, ...numArr, 6];
+let newArr = [0, 1, ...numArr, 6];
 console.log(...newArr);
 console.log(1, 2, 3, 4, 5);
 
+// 인자가 몇개일지 모를 함수에 사용
 console.log(getSub(...numArr));
+console.log(Math.max(...numArr));
 
 // 객체 스프레드
 // 객체의 프로퍼티를 펼친다 => {} 안에 펼치면 복사한 것과 같은 효과
@@ -51,6 +51,7 @@ let obj = {
 let copy = {
   ...obj,
   age: 29,
+  height: 173,
 };
 
 console.log(obj, copy);
