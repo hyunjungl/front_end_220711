@@ -5,6 +5,11 @@ let todoList = document.querySelector(".todoList");
 // localStorage에서 저장된 데이터 받아서 읽을 수 있게 해석
 let todoArr = JSON.parse(localStorage.getItem("todoList"));
 
+localStorage.setItem(
+  "todoList",
+  JSON.stringify([{ id: 1, text: "dsadsa", done: false }])
+);
+
 // id값이 일치하지 않는 요소만 filter => filter로 인자로 받은 id을 가진 todo만 삭제
 function remove(id) {
   todoArr = todoArr.filter(function (todo) {
@@ -15,12 +20,18 @@ function remove(id) {
 
 // id값이 일치하면 todo.done을 반전 => 일치하지 않으면 원래 todo 할당
 function toggleTodo(id) {
-  todoArr.map((todo) =>
-    todo.id === id ? { ...todo, done: !todo.done } : { ...todo }
-  );
+  // 클릭한 todo 하나만 done값을 바꿔야한다.
+  //   => 배열의 내용을 수정할 때 Array.prototype.map
+  todoArr = todoArr.map(function (todo) {
+    // if (todo.id === id) {
+    //   return { ...todo, done: !todo.done };
+    // } else {
+    //   return todo;
+    // }
+    return todo.id === id ? { ...todo, done: !todo.done } : todo;
+  });
   render();
 }
-console.log(todoArr);
 
 todoForm.addEventListener("submit", function (e) {
   // 이벤트의 기본 동작을 막는다.
@@ -45,7 +56,7 @@ function render() {
     console.log(todo);
     // 단축평가 => todo.done 값이 true일 때만 class="done" 적용
     todoList.innerHTML += `
-    <li class="${todo.done && "done"}" data-todo-id>${todo.text}
+    <li class="${todo.done && "done"}" data-todo-id="${todo.id}">${todo.text}
       <div class="btnDel">
       <i class="xi-trash" data-todo-id=${todo.id} weqe="test"></i></div>
     </li>
@@ -72,3 +83,6 @@ todoList.addEventListener("click", function (e) {
     remove(todoId);
   }
 });
+
+localStorage.setItem("test03", todoArr);
+console.log(localStorage.getItem("test02"));
