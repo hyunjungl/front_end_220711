@@ -5,11 +5,6 @@ let todoList = document.querySelector(".todoList");
 // localStorage에서 저장된 데이터 받아서 읽을 수 있게 해석
 let todoArr = JSON.parse(localStorage.getItem("todoList"));
 
-localStorage.setItem(
-  "todoList",
-  JSON.stringify([{ id: 1, text: "dsadsa", done: false }])
-);
-
 // id값이 일치하지 않는 요소만 filter => filter로 인자로 받은 id을 가진 todo만 삭제
 function remove(id) {
   todoArr = todoArr.filter(function (todo) {
@@ -44,7 +39,6 @@ todoForm.addEventListener("submit", function (e) {
     ...todoArr,
     { id: todoArr.length + 1, text: input.value, done: false },
   ];
-  console.log(todoArr);
   render();
 });
 
@@ -66,8 +60,8 @@ function render() {
   // 출력후 input 태그 비우기
   input.value = "";
   // todoArr json으로 변환 후 localStorage에 저장
-  let todoJson = JSON.stringify(todoArr);
-  localStorage.setItem("todoList", todoJson);
+  let todoArrJson = JSON.stringify(todoArr);
+  localStorage.setItem("todoList", todoArrJson);
 }
 
 render();
