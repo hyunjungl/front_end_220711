@@ -29,3 +29,27 @@ $(".modal .btnClose").click(function () {
   $(".modalBg").fadeOut();
   // .hide() : display : none;
 });
+
+$(window).resize(function () {
+  if (window.innerWidth > 768) {
+    $("#gnb").css("display", "block");
+  } else {
+    $("#gnb").css("display", "none");
+  }
+});
+
+$("#gnb").click(function (e) {
+  if (window.innerWidth < 768) {
+    // display : none;
+    if (e.target === this) {
+      $("#gnb").hide();
+    }
+  }
+});
+
+$(".btnSide").click(function () {
+  if (window.innerWidth < 768) {
+    // display : block;
+    $("#gnb").show();
+  }
+});
