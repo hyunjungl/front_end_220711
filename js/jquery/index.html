@@ -88,13 +88,20 @@ $(".numberList li").eq(4).remove();
 $(".textList").empty();
 
 //이벤트 리스너 등록
-$(".inputBox input").attr("readonly",false);
-$(".inputBox button").click(function() {
-  let todoText= $(".inputbox input").val();
-  $(".todoList").append(`<li>${todoText}</li>`);
-})
+$(".inputBox input").attr("readonly", false);
+      $(".inputBox button").click(function () {
+        let todoText = $(".inputBox input").val();
+        $(".todoList").append(`<li>${todoText}</li>`);
+        $(".inputBox input").val("");
+      });
 
-
+      $(".inputBox input").on("keypress", function (e) {
+        if (e.key === "Enter") {
+          let todoText = $(".inputBox input").val();
+          $(".todoList").append(`<li>${todoText}</li>`);
+          $(".inputBox input").val("");
+        }
+      });
 
 </script>
 </body>
