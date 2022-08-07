@@ -1,14 +1,10 @@
-import React from "react";
+import React from "styled-components";
 
-class Title extends React.Component {
-  static defaultProps = {
-    text: "react",
-  };
-  render() {
-    const { text } = this.props;
-
-    return <div>{text}</div>;
-  }
+export default function Title({title}) {
+  return<TitleText>{title}</TitleText>;
 }
 
-export default Title;
+return (
+  //style 속성에 객체 형태로 전달
+HeaderBlock style={headerStyle} clssname
+)
