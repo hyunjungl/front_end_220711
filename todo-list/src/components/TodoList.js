@@ -3,7 +3,8 @@ import TodoItem from "./TodoItem";
 
 // props => {todoList : [...]}
 // let {todoList} = props;
-export default function TodoList({ todoList, onToggle, onRemove }) {
+export default function TodoList(props) {
+  const { todoList, onToggle, onRemove } = props; 
   return (
     <Block>
       {todoList.map((todo) => (
