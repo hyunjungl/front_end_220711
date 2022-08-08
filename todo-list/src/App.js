@@ -3,7 +3,8 @@ import TodoHeader from "./components/TodoHeader";
 import { createGlobalStyle } from "styled-components";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
-import { useMemo, useReducer, useRef } from "react";
+import { useMemo } from "react";
+import { useTodo } from "./useTodo";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -60,51 +61,37 @@ function reducer(state, action) {
 
 function App() {
   // useReducer 한번에 관리할 수 있게 변경
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const { todoList, input, isEdit } = state;
+  const {
+    state,
+    createTodo,
+    toggleTodo,
+    removeTodo,
+    changeInput,
+    changeIsEdit,
+  } = useTodo();
 
-  const nextId = useRef(3);
+  const { todoList, input, isEdit } = state;
 
   const count = useMemo(() => {
     return todoList.filter((todo) => !todo.done).length;
   }, [todoList]);
-
-  const onCreate = (text) => {
-    // Array.prototype.concat() : 인자로 받은 배열을 합쳐서 새로운 배열을 반환
-    dispatch({
-      type: "create",
-      todo: { id: nextId.current, text, done: false },
-    });
-    nextId.current++;
-  };
-  const onToggle = (id) => {
-    dispatch({ type: "toggle", id });
-  };
-
-  const onRemove = (id) => {
-    dispatch({ type: "remove", id });
-  };
-
-  const onChangeInput = (e) => {
-    dispatch({ type: "change_input", input: e.target.value });
-  };
-
-  const onChangeEdit = (isEdit) => {
-    dispatch({ type: "change_edit", isEdit });
-  };
 
   return (
     <>
       <GlobalStyle />
       <TodoBox>
         <TodoHeader count={count} />
-        <TodoList todoList={todoList} onToggle={onToggle} onRemove={onRemove} />
+        <TodoList
+          todoList={todoList}
+          onToggle={toggleTodo}
+          onRemove={removeTodo}
+        />
         <TodoInput
-          onCreate={onCreate}
-          onChangeInput={onChangeInput}
+          onCreate={createTodo}
+          onChangeInput={changeInput}
           input={input}
           isEdit={isEdit}
-          onChangeEdit={onChangeEdit}
+          onChangeEdit={changeIsEdit}
         />
       </TodoBox>
     </>
