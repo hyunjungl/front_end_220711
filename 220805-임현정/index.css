@@ -1,0 +1,148 @@
+h2 {
+  position: absolute;
+  left: 9999px;
+  opacity: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+* {
+  box-sizing: border-box;
+  scroll: none;
+
+ 
+}
+header {
+  display: flex;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+
+  background-color: aquamarine;
+
+}
+#logo {
+  font-size: 20px;
+  margin-right: 50px;
+}
+#menu .menuList {
+  display: flex;
+}
+#menu .menuList li {
+  margin-left: 30px;
+}
+
+.sideMenuBtn {
+  display: none;
+}
+.slider {
+  overflow: hidden;
+}
+.slider ul {
+  display: flex;
+  width: 300vw;
+  transition: 0.3s;
+  user-select: none;
+}
+ .slider ul .slide {
+  width: 300vw;
+  height: 300px;
+  background-color: royalblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .slider ul .slide:nth-child(2) {
+  background-color: yellow;
+}
+ .slider ul .slide:nth-child(3) {
+  background-color: orange;
+}
+
+.modalBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left :0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+}
+.modalBack .modal {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+}
+.modalBack .modal .title {
+display: flex;
+justify-content: space-between;
+padding: 10px;
+border-bottom: 1px solid black;
+}
+.modalBack .modal .closeBtn {
+  cursor: pointer;
+}
+.modalBack .modal .content {
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 40px;
+    line-height: 40px;
+    justify-content: space-between;
+   
+  }
+  #menu {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    background-color: rgba(0,0,0,0.2);
+    transition-delay: 0.4s;
+    z-index: 100;
+    overflow: hidden;
+
+  }
+  #menu.on {
+    height: 100vh;
+    transition-delay: 0s;
+
+  }
+
+  #menu .menuList {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: white;
+    transition: 0.4s;
+    transform: translate(200px);
+
+  }
+  #menu.on .menuList {
+    transform: translate(0);
+  }
+
+  #menu .menuList li {
+    margin-left: 0;
+  }
+  #menu .menuList li a {
+    display: block;
+    padding: 0 10px;
+    line-height: 40px;
+    border-bottom: 1px solid aquamarine;
+    
+    
+}
+header .sideMenuBtn {
+  display: block;
+  cursor: pointer;
+}
+}
