@@ -15,8 +15,16 @@ export default function Slider() {
           <li key={slide.id}>{slide.title}</li>
         ))}
       </SliderBlock>
-      <button onClick={() => setIndex(index + 1)}>오른쪽</button>
-      <button onClick={() => setIndex(index >= 0 ? index + 1 : 0)}>왼쪽</button>
+      <button
+        onClick={() =>
+          setIndex(
+            index < slideList.length - 1 ? index + 1 : slideList.length - 1
+          )
+        }
+      >
+        오른쪽
+      </button>
+      <button onClick={() => setIndex(index > 0 ? index - 1 : 0)}>왼쪽</button>
     </SliderContainer>
   );
 }
