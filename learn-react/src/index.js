@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CounterReducer from './components/CounterReducer';
+import TrafficCard from './components/TrafficCard';
 // import InputTitle from './components/inputTitle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <TrafficCard/>
   </React.StrictMode>
 );
 
