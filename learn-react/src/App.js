@@ -1,15 +1,32 @@
-import Header from "./components/Header";
+import styled from "styled-components";
 import { Reset } from "styled-reset";
-import Slider from "./components/Slider";
+import Dropdown from "./components/ui/Dropdown";
 
 function App() {
   return (
-    <>
+    <Template>
       <Reset />
-      <Header />
-      <Slider />
-    </>
+      <Block>
+        <Dropdown />
+      </Block>
+    </Template>
   );
 }
+
+const Template = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+`;
+
+const Block = styled.div`
+  width: 300px;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+`;
 
 export default App;
