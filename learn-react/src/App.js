@@ -9,6 +9,7 @@ function App() {
       <Block>
        <Dropdown />
       </Block>
+      <Modal />
     </Template>
   );
 }
