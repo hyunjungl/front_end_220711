@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import { Reset } from "styled-reset";
-import Dropdown from "./components/ui/Dropdown";
+import Modal from "./components/ui/Modal";
+import{useState} from "react";
+import Slider from "./components/ui/Slider";
+
 
 function App() {
+  const [modal, setModal] =useState(true);
   return (
     <Template>
         <Reset />
-      <Block>
-       <Dropdown />
-      </Block>
-      <Modal />
+   
+       <Slider />
+      {modal && <Modal setModal={setModal}/>}
     </Template>
   );
 }

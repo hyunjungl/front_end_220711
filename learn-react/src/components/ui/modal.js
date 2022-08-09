@@ -1,12 +1,18 @@
 import styled, {keyframes} from "styled-components";
 import {AiOutlineClose} from "react-icons/ai";
 
-export default function Modal() {
+export default function Modal({setModal}) {
 const [disappear, setDisappear]=useState(false);
   return (
-  <BgBlock>
-    <ModalBlock>
-      <BtnClose>
+  <BgBlock  disappear={disappear}>
+    <ModalBlock  disappear={disappear}>
+      <BtnClose onClick={()=>{
+        setDisappear(true);
+      setTimeout(() => {
+        setModal(false);
+      }, 300);
+    }}
+    >
         <AiOutlineClose/>
       </BtnClose>
     </ModalBlock>
@@ -31,6 +37,7 @@ const BgBlock = styled.div`
   left:0;
 
   background: rgba(0,0,0,0.4);
+
 `;
 
 const ModalBlock =styled.div`
@@ -38,8 +45,11 @@ const ModalBlock =styled.div`
   height : 300px;
   background-color: #fff;
   position:relative;
+
+  ${({disappear})=> disappear && css`
   animation-name: ${fadeOut};
   animation-duration: 0.3s;
+  `}
 `;
 
 const BtnClose = styled.div`
