@@ -1,38 +1,63 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 export default function Slider() {
   const [slideList, setSlideList] = useState([
-    { id: 1, title: "영화1" },
-    { id: 2, title: "영화2" },
-    { id: 3, title: "영화3" },
+    { title: "슬라이드1" },
+    { title: "슬라이드2" },
+    { title: "슬라이드3" },
+    { title: "슬라이드4" },
+    { title: "슬라이드5" },
+    { title: "슬라이드6" },
   ]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
   return (
-    <SliderContainer>
-      <SliderBlock length={slideList.length} index={index}>
+    <Container length={slideList.length} index={index}>
+      <ul>
         {slideList.map((slide) => (
-          <li key={slide.id}>{slide.title}</li>
+          <li>{slide.title}</li>
         ))}
-      </SliderBlock>
-      <button onClick={() => setIndex(index + 1)}>오른쪽</button>
-      <button onClick={() => setIndex(index >=0 ? index + 1)}>왼쪽</button>
-    </SliderContainer>
+      </ul>
+      <Btns>
+        <AiFillCaretLeft
+          size={36}
+          cursor="pointer"
+          onClick={() => index > 0 && setIndex(index - 1)}
+        />
+        <AiFillCaretRight
+          size={36}
+          cursor="pointer"
+          onClick={() => index < slideList.length - 1 && setIndex(index + 1)}
+        />
+      </Btns>
+    </Container>
   );
 }
 
-const SliderContainer = styled.div`
-  overflow: hidden;
-`;
-const SliderBlock = styled.ul`
-  display: flex;
-  transition: 0.25s;
+const Container = styled.div`
+  width: 100%;
   height: 300px;
-  ${({ length, index }) => css`
-    width: ${length * 100 + "vw"};
-    transform: translate(-${index * 100}vw);
-  `}
-  li {
-    width: 100vw;
+  ul {
+    display: flex;
+    height: 300px;
+    ${({ length, index }) => css`
+      width: ${length * 100}vw;
+      transform: translate(${index * -100}vw);
+    `}
+    li {
+      /* 너비 100vw */
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px;
+      color: #fff;
+      background-color: tomato;
+    }
   }
+`;
+
+const Btns = styled.div`
+  text-align: center;
 `;
