@@ -22,8 +22,8 @@ function reducer(state, action) {
 
 export default function WordBook() {
   const [state, dispatch] = useReducer(reducer, [
-    { id: 1, eng: "computer", kor: "컴퓨터", active: true },
-    { id: 2, eng: "phone", kor: "휴대폰", active: false },
+    { id: 1, eng: "computer", kor: ["컴퓨터"], active: true },
+    { id: 2, eng: "phone", kor: ["휴대폰", "테스트"], active: false },
   ]);
 
   const nextId = useRef(3);
@@ -33,6 +33,7 @@ export default function WordBook() {
       type: "create_word",
       word: { id: nextId.current, eng, kor },
     });
+    nextId.current++;
   };
 
   const onRemove = (id) => {
@@ -46,7 +47,7 @@ export default function WordBook() {
   return (
     <Tamplate>
       <WordBookBlock>
-        <WordBookHeader />
+        <WordBookHeader state={state} />
         <WordList wordList={state} onRemove={onRemove} onToggle={onToggle} />
         <WordInput onCreate={onCreate} />
       </WordBookBlock>
