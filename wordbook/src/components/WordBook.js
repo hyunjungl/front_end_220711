@@ -9,6 +9,12 @@ function reducer(state, action) {
   switch (action.type) {
     case "create_word":
       return [...state, action.word];
+    case "remove_word":
+      return state.filter((word) => word.id !== action.id);
+    case "toggle_word":
+      return state.map((word) =>
+        word.id === action.id ? { ...word, active: !word.active } : word
+      );
     default:
       return state;
   }
@@ -16,8 +22,8 @@ function reducer(state, action) {
 
 export default function WordBook() {
   const [state, dispatch] = useReducer(reducer, [
-    { id: 1, eng: "computer", kor: "컴퓨터" },
-    { id: 2, eng: "phone", kor: "휴대폰" },
+    { id: 1, eng: "computer", kor: "컴퓨터", active: true },
+    { id: 2, eng: "phone", kor: "휴대폰", active: false },
   ]);
 
   const nextId = useRef(3);
@@ -29,11 +35,19 @@ export default function WordBook() {
     });
   };
 
+  const onRemove = (id) => {
+    dispatch({ type: "remove_word", id });
+  };
+
+  const onToggle = (id) => {
+    dispatch({ type: "toggle_word", id });
+  };
+
   return (
     <Tamplate>
       <WordBookBlock>
         <WordBookHeader />
-        <WordList wordList={state} />
+        <WordList wordList={state} onRemove={onRemove} onToggle={onToggle} />
         <WordInput onCreate={onCreate} />
       </WordBookBlock>
     </Tamplate>

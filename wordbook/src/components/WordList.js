@@ -1,25 +1,50 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { FaTrash } from "react-icons/fa";
+import { AiFillCheckCircle, AiOutlineCheckCircle } from "react-icons/ai";
 
-export default function WordList({ wordList }) {
+export default function WordList({ wordList, onRemove, onToggle }) {
   return (
     <WordListBlock>
       {wordList.map((word) => (
-        <WordItem word={word} />
+        <WordItem
+          key={word.id}
+          word={word}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        />
       ))}
     </WordListBlock>
   );
 }
 
-function WordItem({ word }) {
+function WordItem({ word, onRemove, onToggle }) {
   const [active, setActive] = useState(false);
   return (
-    <WordItemBlock onClickCapture={() => setActive(!active)}>
+    <WordItemBlock onClick={() => setActive(!active)}>
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggle(word.id);
+        }}
+      >
+        {word.active ? (
+          <AiFillCheckCircle size={24} />
+        ) : (
+          <AiOutlineCheckCircle size={24} />
+        )}
+      </div>
+
       <h3>
         {word.eng}
         {/* 버블링 */}
-        <FaTrash onClick={() => console.log("remove")} />
+        <FaTrash
+          onClick={(e) => {
+            // 이벤트 전파를 막는다.
+            e.stopPropagation();
+            onRemove(word.id);
+          }}
+        />
       </h3>
       {active && <p>{word.kor}</p>}
     </WordItemBlock>
