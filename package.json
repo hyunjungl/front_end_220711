@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "eslint-config-react-app": "^6.0.0",
     "react-icons": "^4.4.0",
     "styled-components": "^5.3.5",
     "styled-reset": "^4.4.2"
