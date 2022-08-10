@@ -60,7 +60,11 @@ function WordItem({ word, onRemove, onToggle }) {
   );
 }
 
-const WordListBlock = styled.ul``;
+const WordListBlock = styled.ul`
+  overflow-y: auto;
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+`;
 
 const WordItemBlock = styled.li`
   padding: 10px 20px;

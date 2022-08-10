@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { useReducer } from "react";
+import { useRef, useReducer, useEffect } from "react";
 import styled from "styled-components";
 import WordBookHeader from "./WordBookHeader";
 import WordInput from "./WordInput";
@@ -20,20 +19,31 @@ function reducer(state, action) {
   }
 }
 
-export default function WordBook() {
-  const [state, dispatch] = useReducer(reducer, [
-    { id: 1, eng: "computer", kor: ["컴퓨터"], active: true },
-    { id: 2, eng: "phone", kor: ["휴대폰", "테스트"], active: false },
-  ]);
+const initialState = JSON.parse(localStorage.getItem("wordList"));
 
-  const nextId = useRef(3);
+export default function WordBook() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const nextId = useRef(state[state.length - 1].id + 1);
 
   const onCreate = (eng, kor) => {
-    dispatch({
-      type: "create_word",
-      word: { id: nextId.current, eng, kor },
-    });
-    nextId.current++;
+    // state의 단어들 중 영어만 추출
+    const engList = state.map((word) => word.eng);
+    // 이미 등록된 단어인지 확인
+    if (engList.includes(eng)) {
+      alert("이미 등록된 단어 입니다.");
+    } else {
+      if (eng === "" || kor[0] === "") {
+        alert("입력된 값을 확인해주세요.");
+        return;
+      } else {
+        dispatch({
+          type: "create_word",
+          word: { id: nextId.current, eng, kor },
+        });
+        nextId.current++;
+      }
+    }
   };
 
   const onRemove = (id) => {
@@ -43,6 +53,10 @@ export default function WordBook() {
   const onToggle = (id) => {
     dispatch({ type: "toggle_word", id });
   };
+
+  useEffect(() => {
+    localStorage.setItem("wordList", JSON.stringify(state));
+  }, [state]);
 
   return (
     <Tamplate>
@@ -65,6 +79,8 @@ const Tamplate = styled.div`
 `;
 
 const WordBookBlock = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 500px;
   height: 700px;
   border: 1px solid #ddd;

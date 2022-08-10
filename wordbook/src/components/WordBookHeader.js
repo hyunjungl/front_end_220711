@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export default function WordBookHeader({ state }) {
   const count = state.length;
@@ -13,7 +13,9 @@ export default function WordBookHeader({ state }) {
       <p>
         외운 단어 : {memorizedNum}/{count}
       </p>
-      <StatusBar />
+      <StatusBar status={(memorizedNum / count) * 100}>
+        <p>{parseInt((memorizedNum / count) * 100)}%</p>
+      </StatusBar>
     </HeaderBlock>
   );
 }
@@ -23,4 +25,32 @@ const HeaderBlock = styled.div`
   border-bottom: 1px solid #ddd;
 `;
 
-const StatusBar = styled.div``;
+const StatusBar = styled.div`
+  height: 15px;
+  background-color: #ddd;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  p {
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    ${({ status }) => css`
+      transform: scaleX(${status}%);
+    `}
+    transform: ${({ status }) => `scaleX(${status}%)`};
+    transform-origin: left;
+    background-color: black;
+    transition: 0.4s;
+  }
+`;
