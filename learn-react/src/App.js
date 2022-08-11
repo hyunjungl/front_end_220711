@@ -1,17 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Reset } from "styled-reset";
-import Modal from "./components/ui/Modal";
-import Slider from "./components/ui/Slider";
+import Instagram from "./components/instagram2/Instagram";
 
 function App() {
-  const [modal, setModal] = useState(false);
   return (
-    <Template>
+    <>
       <Reset />
-      <Slider />
-      {modal && <Modal setModal={setModal} />}
-    </Template>
+      <Instagram />
+    </>
   );
 }
 
