@@ -5,11 +5,16 @@ import { createContext, useContext } from "react";
 export const GrandContext = createContext("기본값");
 
 export default function GrandFather() {
-  const value = 1;
+  const text = {
+    age: 30,
+    greeting() {
+      console.log("안녕하세요");
+    },
+  };
   return (
     // 2. Context.Provider 안에 있는 컴포넌트만 전역 상태에 접근할 수 있다.
     // Context.Provider의 value 프로퍼티에 전달하고자 하는 값을 지정
-    <GrandContext.Provider value={value}>
+    <GrandContext.Provider value={text}>
       <Father />
     </GrandContext.Provider>
   );

@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import { FaTrash } from "react-icons/fa";
 import { AiFillCheckCircle, AiOutlineCheckCircle } from "react-icons/ai";
+import { WordContext } from "./WordBook";
 
-export default function WordList({ wordList, onRemove, onToggle }) {
+export default function WordList({ onRemove, onToggle }) {
+  const wordList = useContext(WordContext);
   return (
     <WordListBlock>
       {wordList.map((word) => (

@@ -1,4 +1,4 @@
-import { useRef, useReducer, useEffect } from "react";
+import { useRef, useReducer, useEffect, createContext } from "react";
 import styled from "styled-components";
 import WordBookHeader from "./WordBookHeader";
 import WordInput from "./WordInput";
@@ -21,8 +21,10 @@ function reducer(state, action) {
 
 const initialState = JSON.parse(localStorage.getItem("wordList"));
 
+export const WordContext = createContext(null);
+
 export default function WordBook() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState || []);
 
   const nextId = useRef(state[state.length - 1].id + 1);
 
@@ -60,11 +62,13 @@ export default function WordBook() {
 
   return (
     <Tamplate>
-      <WordBookBlock>
-        <WordBookHeader state={state} />
-        <WordList wordList={state} onRemove={onRemove} onToggle={onToggle} />
-        <WordInput onCreate={onCreate} />
-      </WordBookBlock>
+      <WordContext.Provider value={state}>
+        <WordBookBlock>
+          <WordBookHeader state={state} />
+          <WordList wordList={state} onRemove={onRemove} onToggle={onToggle} />
+          <WordInput onCreate={onCreate} />
+        </WordBookBlock>
+      </WordContext.Provider>
     </Tamplate>
   );
 }
