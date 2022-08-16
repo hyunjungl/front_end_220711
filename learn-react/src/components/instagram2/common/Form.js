@@ -14,6 +14,8 @@ export default function Form() {
   const displayText = hide ? "Show" : "Hide";
   const { username, password } = inputs;
 
+  const btnActive = username.length > 0 && password.length > 5;
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInputs({
@@ -43,7 +45,7 @@ export default function Form() {
           name="password"
           value={password}
         />
-        <Button text="Log in" margin={"margin-top: 15px"} />
+        <Button text="Log in" margin={"margin-top: 15px"} active={btnActive} />
       </FormBlock>
     </form>
   );
