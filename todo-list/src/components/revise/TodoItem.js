@@ -1,8 +1,19 @@
 import styled, { css } from "styled-components";
 import { AiOutlineCheck } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
+import { useTodoDispatch } from "../../contexts/useTodoContext";
 
-export default function TodoItem({ todo, toggleTodo, removeTodo }) {
+export default function TodoItem({ todo }) {
+  const dispatch = useTodoDispatch();
+
+  const toggleTodo = () => {
+    dispatch({ type: "toggle_todo", id: todo.id });
+  };
+
+  const removeTodo = () => {
+    dispatch({ type: "remove_todo", id: todo.id });
+  };
+
   return (
     <Block>
       <BtnCheck done={todo.done} onClick={toggleTodo}>

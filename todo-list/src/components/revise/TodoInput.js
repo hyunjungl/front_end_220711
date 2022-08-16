@@ -1,17 +1,22 @@
 import styled, { css } from "styled-components";
 import { darken, lighten } from "polished";
-import { useState } from "react";
-import {
-  useDispatch,
-  useTodoDispatch,
-  useTodoState,
-} from "../../contexts/useTodoContext";
+import React, { useState } from "react";
+import { useTodoDispatch, useTodoNextId } from "../../contexts/useTodoContext";
 
-export default function TodoInput({ handleInput, createTodo }) {
+export default React.memo(function TodoInput({ input }) {
   const [active, setActive] = useState(false);
-  const { input } = useTodoState();
   const dispatch = useTodoDispatch();
-  console.log(dispatch);
+  const nextId = useTodoNextId();
+
+  const createTodo = () => {
+    dispatch({ type: "create_todo", id: nextId.current });
+    nextId.current++;
+  };
+
+  const handleInput = (e) => {
+    dispatch({ type: "change_input", input: e.target.value });
+  };
+
   const onClickBtn = () => {
     if (active && input.trim() === "") return;
     if (active) {
@@ -28,7 +33,7 @@ export default function TodoInput({ handleInput, createTodo }) {
       <Btn onClick={onClickBtn}>{active ? "Submit" : "Add"}</Btn>
     </Block>
   );
-}
+});
 
 const Block = styled.div`
   padding: 10px;
