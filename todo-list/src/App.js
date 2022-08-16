@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import TodoBox from "./components/revise/TodoBox";
+import { useTodoState } from "./contexts/useTodoContext";
 
 const GlobalStyle = createGlobalStyle`
   * {

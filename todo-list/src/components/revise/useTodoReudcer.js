@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useRef } from "react";
 
 const initialState = {
   input: "",
@@ -39,6 +39,28 @@ function reducer(state, action) {
   }
 }
 
-function useTodoReducer() {
-  const [state, useTodoReducer] = useReducer(reducer, initialState);
+export default function useTodoReducer() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleInput = (e) => {
+    dispatch({ type: "change_input", input: e.target.value });
+  };
+
+  const nextId = useRef(3);
+
+  const createTodo = () => {
+    if (state.input.trim() === "") return;
+    dispatch({ type: "create_todo", id: nextId.current });
+    nextId.current++;
+  };
+
+  const toggleTodo = (id) => {
+    dispatch({ type: "toggle_todo", id });
+  };
+
+  const removeTodo = (id) => {
+    dispatch({ type: "remove_todo", id });
+  };
+
+  return { state, handleInput, createTodo, toggleTodo, removeTodo };
 }

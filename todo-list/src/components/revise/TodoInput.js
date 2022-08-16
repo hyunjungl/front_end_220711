@@ -1,10 +1,17 @@
 import styled, { css } from "styled-components";
 import { darken, lighten } from "polished";
 import { useState } from "react";
+import {
+  useDispatch,
+  useTodoDispatch,
+  useTodoState,
+} from "../../contexts/useTodoContext";
 
-export default function TodoInput({ input, handleInput, createTodo }) {
+export default function TodoInput({ handleInput, createTodo }) {
   const [active, setActive] = useState(false);
-
+  const { input } = useTodoState();
+  const dispatch = useTodoDispatch();
+  console.log(dispatch);
   const onClickBtn = () => {
     if (active && input.trim() === "") return;
     if (active) {
