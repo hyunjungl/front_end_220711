@@ -24,7 +24,7 @@ export default function Navigation() {
     <NavBlock>
       <ul>
         {gnbList.map((menu) => (
-          <NavItem menu={menu} />
+          <NavItem key={menu.id} menu={menu} />
         ))}
       </ul>
     </NavBlock>

@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-export default function PopularItem() {
+export default function PopularItem({ item }) {
+  const { title, name, release_date, first_air_date, poster_path } = item;
+  const imgUrl = `https://image.tmdb.org/t/p/w300${poster_path}`;
+
   return (
     <ItemBlock>
-      <ImgBox>이미지</ImgBox>
-      <Title>영화제목</Title>
-      <ReleaseDate>2022-08-18</ReleaseDate>
+      <ImgBox>
+        <img src={imgUrl} alt={title || name} />
+      </ImgBox>
+      <Title>{title || name}</Title>
+      <ReleaseDate>{release_date || first_air_date}</ReleaseDate>
     </ItemBlock>
   );
 }
@@ -18,15 +23,22 @@ const ItemBlock = styled.li`
 `;
 
 const ImgBox = styled.div`
-  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
   height: 400px;
+  overflow: hidden;
   background-color: red;
+  img {
+    height: 100%;
+  }
 `;
 
 const Title = styled.h4`
   font-size: 1.2em;
   font-weight: 700;
-  margin: 10px 0 5px;
+  margin-top: 10px;
 `;
 
 const ReleaseDate = styled.span`
