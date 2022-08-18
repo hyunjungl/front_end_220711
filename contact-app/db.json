@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "title": "dsadsa",
+      "author": "황보석",
+      "id": 1
+    },
+    {
+      "title": "dasdsadsa",
+      "author": "황보석",
+      "id": 5
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

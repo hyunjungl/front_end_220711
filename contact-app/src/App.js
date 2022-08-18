@@ -1,15 +1,6 @@
-import { atom, RecoilRoot } from "recoil";
-import TodoHeader from "./components/TodoHeader";
-import TodoInput from "./components/TodoInput";
-import TodoBlock from "./components/TodoBlock";
-import Todos from "./components/todos/Todos";
-
+import PostList from "./components/post/PostList";
 function App() {
-  return (
-    <RecoilRoot>
-      <Todos />
-    </RecoilRoot>
-  );
+  return <PostList />;
 }
 
 export default App;
