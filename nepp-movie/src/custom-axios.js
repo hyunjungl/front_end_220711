@@ -26,3 +26,6 @@ export const getDetail = async (url) => {
 
   return result;
 };
+
+// /movie/{movie_id}/credits => 배우, 제작진 등
+// cast => 배우들

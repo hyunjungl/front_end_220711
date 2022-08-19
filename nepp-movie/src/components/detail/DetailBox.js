@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDetail } from "../../custom-axios";
+import Loading from "../common/Loading";
 
 // /movie/:id  => /movie/123
 //   => usePrams() => {id : 123}
@@ -10,6 +11,7 @@ import { getDetail } from "../../custom-axios";
 export default function DetailBox() {
   // 숫자를 넣더라도 string으로 넘어온다
   const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const { pathname } = useLocation();
 
   const {
@@ -33,14 +35,19 @@ export default function DetailBox() {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await getDetail(pathname);
+
       setData(data);
+      setIsLoading(false);
     };
 
     fetchData();
   }, [pathname]);
 
+  if (isLoading) return <Loading />;
+
   return (
-    <Block backdropUrl={backdropUrl}>
+    <Block backdropUrl={backdropUrl} isLoading={isLoading}>
+      <Backdrop />
       <ImgBox>
         <img src={imgUrl} alt="" />
       </ImgBox>
@@ -72,6 +79,19 @@ const Block = styled.div`
   `}
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+`;
+
+// 포토샵 레이어 - 어저스트 레이어?
+const Backdrop = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  // 블러 처리
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
 `;
 
 const ImgBox = styled.div`
@@ -82,11 +102,11 @@ const ImgBox = styled.div`
   flex-shrink: 0;
   width: 300px;
   height: 450px;
-  background-color: tomato;
   margin-right: 20px;
   img {
     height: 100%;
   }
+  z-index: 100;
 `;
 
 const TitleBox = styled.div`
@@ -102,7 +122,10 @@ const TitleBox = styled.div`
   }
 `;
 
-const ContentBox = styled.div``;
+const ContentBox = styled.div`
+  z-index: 100;
+  color: #fff;
+`;
 
 const DescText = styled.p`
   line-height: 1.4em;
