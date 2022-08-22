@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Title from "../common/Title";
 import PopularItem from "./PopularItem";
 import { useEffect, useState } from "react";
-import { getPopular } from "../../custom-axios";
+import { getPopular, getTrending } from "../../custom-axios";
 import TabList from "../common/TabList";
 import TabMenu from "../common/TabMenu";
 

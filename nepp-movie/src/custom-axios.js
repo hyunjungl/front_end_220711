@@ -7,10 +7,11 @@ const instance = axios.create({
   },
 });
 
-export const getPopular = async (category) => {
+export const getPopular = async (category, page) => {
   let { data } = await instance.get(`${category}/popular`, {
     params: {
       language: "ko-KR",
+      page,
     },
   });
 
@@ -29,3 +30,17 @@ export const getDetail = async (url) => {
 
 // /movie/{movie_id}/credits => 배우, 제작진 등
 // cast => 배우들
+
+export const getSearch = async (query) => {
+  try {
+    let result = await instance.get("/search/multi", {
+      params: {
+        language: "ko-KR",
+        query,
+      },
+    });
+    return result;
+  } catch (e) {
+    console.log(e);
+  }
+};
